@@ -25,3 +25,6 @@
 [submodule "bundle/FSwitch"]
 	path = bundle/FSwitch
 	url = git://github.com/derekwyatt/vim-fswitch.git
+[submodule "bundle/CommandT"]
+	path = bundle/CommandT
+	url = git://git.wincent.com/command-t.git
