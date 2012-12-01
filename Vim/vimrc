@@ -502,4 +502,9 @@ map <leader>fsj :FSSplitBelow<CR>
 map <leader>fsk :FSSplitAbove<CR>
 map <leader>fsl :FSSplitRight<CR>
 
+"----------------------------------------------------------------------
+" CommandT
 
+noremap <leader>t :CommandT<CR>
+noremap <leader>T <Esc>:CommandTFlush<CR>
+noremap <leader>O <Esc>:CommandTBuffer<CR>
