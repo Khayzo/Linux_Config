@@ -1,0 +1,122 @@
+#My aliases
+
+alias lll='ls -la | less'
+
+alias q='exit'
+
+alias cd..='cd ..'
+alias ..='cd ..'
+alias ...='cd ../..'
+alias ....='cd ../../..'
+
+alias md='mkdir -p'
+alias rd='rmdir'
+
+alias cp='cp -i' #Prompt before overwrite
+alias mv='mv -i' #Prompt before overwrite
+
+alias untargz='tar -zxvf'
+alias untarbz='tar -jxvf'
+
+alias update='sudo apt-get update'
+alias upgrade='sudo apt-get upgrade'
+alias search='sudo apt-cache search'
+alias install='sudo apt-get install'
+alias remove='sudo apt-get remove'
+alias autoremove='sudo apt-get autoremove'
+alias clean='sudo apt-get clean'
+alias autoclean='sudo apt-get autoclean'
+
+alias build='./configure && make && sudo make install'
+
+alias path='echo $PATH | tr ":" "\n"'
+
+alias pp='cd ~/Programmation/PERSO/'
+alias pi='cd ~/Programmation/IF/'
+
+alias g='gvim'
+alias sg='sudo gvim'
+
+alias dvtm='dvtm -m ^w'
+alias d='dvtm -m ^w'
+
+alias clip='xclip -sel clip <'
+
+#---------------------------------------------------------------------------------
+#My functions
+
+#Backup le fichier ou le dossier passé en paramètre dans le dossier Dropbox/Linux/Config/YYYY-MM-DD
+function bkup {
+
+	BACKUP_FOLDER=~/Dropbox/Linux/Config/`date +%F`
+	
+	if [ $# -eq 1 ]
+	then 
+		sudo mkdir -p $BACKUP_FOLDER && sudo cp -rip $1 $BACKUP_FOLDER && sudo chmod 777 $BACKUP_FOLDER
+	else
+		echo "Error : 1 argument expected but $# received."
+	fi 
+}
+
+#Lance un processus en arrière-plan sans qu'il soit rattaché au terminal
+function launch {
+
+	if [ $# -ge 1 ]
+	then
+		nohup $@ > /dev/null 2>&1 &
+
+	else
+		echo "Error : at least 1 argument is expected but $# received"
+	fi
+}
+
+######## change la couleur du load en fonction de sa valeur
+function load {
+
+    Load=`cat /proc/loadavg | awk '{print $1}'`
+    IntLoad=`echo $Load | cut -f1 -d.`
+    if [ $IntLoad -le 0 ] ; then
+        LoadColor=
+    elif [ $IntLoad -le 1 ] ; then
+        LoadColor=$MAGENTA
+    elif [ $IntLoad -le 4 ] ; then
+        LoadColor=$RED
+    else
+        LoadColor=$DARKRED
+    fi
+
+    echo -e " 
+     [$LoadColor$Load$BLACK]
+"
+}
+
+#Cree le repertoire et va dedans
+function mkcd() {
+	
+	if [ $# -eq 1 ]
+	then	
+		mkdir -p $1 && cd $1
+	else
+		echo "Error : 1 argument expected but $# received"
+	fi
+}
+
+# This addpath adds a path only if it's not already in $PATH and it's a dir.
+function addpath () {
+    case :$PATH: in *:$1:*) ;; *) [ -d $1 ] && PATH="$PATH${PATH:+:}$1" ;; esac
+}
+
+#chope l'adresse IP publique
+function pub()
+{
+wget -O - -q http://www.whatismyip.com | grep -i "<TITLE>Your IP" | awk '{print $4}'
+}
+#lynx --dump http://www.whatismyip.com/|grep Your|awk '{print $4}'
+
+#chope l'adresse IP (privee)
+function priv()
+{
+#sudo ifconfig eth0|grep "inet adr"|awk '{print $2}'|awk -F ':' '{print $2}'
+sudo ifconfig wlan0|grep "inet adr"|awk '{print $2}'|awk -F ':' '{print $2}' 
+}
+
