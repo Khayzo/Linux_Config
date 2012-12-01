@@ -40,22 +40,10 @@ public:
 //-------------------------------------------- Constructeurs - destructeur
 
     Classe(Classe const & __classe);
-    // Mode d'emploi (constructeur de copie) : trivial
-    //
-    // Contrat : aucun
-    //
 
     Classe();
-    // Mode d'emploi : trivial
-    //
-    // Contrat : aucun
-    //
 
     virtual ~Classe();
-    // Mode d'emploi : trivial
-    //
-    // Contrat : aucun
-    //
 
 //------------------------------------------------------------------ PRIVE
 
@@ -68,5 +56,5 @@ protected:
 
 //--------------------------- Autres définitions dépendantes de <Classe>
 
-#endif // CLASSE_H
+#endif
 

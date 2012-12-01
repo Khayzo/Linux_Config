@@ -9,12 +9,8 @@
 
 //---------------------------------------------------------------- INCLUDE
 
-//-------------------------------------------------------- Include système
 #include <iostream>
 
-using namespace std;
-
-//------------------------------------------------------ Include personnel
 #include "Classe.h"
 
 //------------------------------------------------------------- Constantes
@@ -25,16 +21,12 @@ using namespace std;
 
 //------------------------------------------------- Surcharge d'opérateurs
 Classe & Classe::operator = (Classe const & __classe)
-// Algorithme : trivial
-//
 {
 }
 
 
 //-------------------------------------------- Constructeurs - destructeur
 Classe::Classe(Classe const & __classe)
-// Algorithme : trivial
-//
 {
 #ifdef MAP
     cout << "Appel au constructeur de copie de <Classe>" << endl;
@@ -43,8 +35,6 @@ Classe::Classe(Classe const & __classe)
 
 
 Classe::Classe()
-// Algorithme : trivial
-//
 {
 #ifdef MAP
     cout << "Appel au constructeur de <Classe>" << endl;
@@ -53,8 +43,6 @@ Classe::Classe()
 
 
 Classe::~Classe()
-// Algorithme : trivial
-//
 {
 #ifdef MAP
     cout << "Appel au destructeur de <Classe>" << endl;
