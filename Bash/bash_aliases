@@ -2,6 +2,7 @@
 
 alias lll='ls -la | less'
 
+alias c='clear'
 alias q='exit'
 
 alias cd..='cd ..'
@@ -27,6 +28,8 @@ alias autoremove='sudo apt-get autoremove'
 alias clean='sudo apt-get clean'
 alias autoclean='sudo apt-get autoclean'
 
+alias sa='dpkg -l | grep -i'
+
 alias build='./configure && make && sudo make install'
 
 alias path='echo $PATH | tr ":" "\n"'
@@ -41,6 +44,8 @@ alias dvtm='dvtm -m ^w'
 alias d='dvtm -m ^w'
 
 alias clip='xclip -sel clip <'
+
+alias od='launch nautilus `pwd`'
 
 #---------------------------------------------------------------------------------
 #My functions
@@ -106,14 +111,14 @@ function addpath () {
     case :$PATH: in *:$1:*) ;; *) [ -d $1 ] && PATH="$PATH${PATH:+:}$1" ;; esac
 }
 
-#chope l'adresse IP publique
+#Adresse IP publique
 function pub()
 {
 wget -O - -q http://www.whatismyip.com | grep -i "<TITLE>Your IP" | awk '{print $4}'
 }
 #lynx --dump http://www.whatismyip.com/|grep Your|awk '{print $4}'
 
-#chope l'adresse IP (privee)
+#Adresse IP (privee)
 function priv()
 {
 #sudo ifconfig eth0|grep "inet adr"|awk '{print $2}'|awk -F ':' '{print $2}'

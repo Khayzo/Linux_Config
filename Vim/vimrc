@@ -342,10 +342,10 @@ endfunction
 
 "Tab shortcuts
 set showtabline=2
-map œ :tabn<CR>
-map Œ :tabp<CR>
+map ² :tabn<CR>
+map ~ :tabp<CR>
 
-" Split shortcuts
+"Move betwwen splits
 map <Tab> <C-W>w
 map <S-Tab> <C-W>W
 "New right empty vertical split
@@ -487,12 +487,14 @@ map <silent> <F3> :NERDTreeToggle<cr>
 imap <silent> <F3> <C-o><F3><cr>
 
 
+
 "----------------------------------------------------------------------
 " TagBar
 
 let g:tagbar_usearrows = 1
 map <leader><Tab> :TagbarToggle<CR>
 map <F4> :TagbarToggle<CR>
+
 
 "----------------------------------------------------------------------
 " FSwitch
@@ -501,6 +503,7 @@ map <leader>fsh :FSSplitLeft<CR>
 map <leader>fsj :FSSplitBelow<CR>
 map <leader>fsk :FSSplitAbove<CR>
 map <leader>fsl :FSSplitRight<CR>
+
 
 "----------------------------------------------------------------------
 " CommandT

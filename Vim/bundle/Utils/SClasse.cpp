@@ -29,7 +29,7 @@ Classe & Classe::operator = (Classe const & __classe)
 Classe::Classe(Classe const & __classe)
 {
 #ifdef MAP
-    cout << "Appel au constructeur de copie de <Classe>" << endl;
+    std::cout << "Appel au constructeur de copie de <Classe>" << std::endl;
 #endif
 }
 
@@ -37,7 +37,7 @@ Classe::Classe(Classe const & __classe)
 Classe::Classe()
 {
 #ifdef MAP
-    cout << "Appel au constructeur de <Classe>" << endl;
+    std::cout << "Appel au constructeur de <Classe>" << std::endl;
 #endif
 }
 
@@ -45,7 +45,7 @@ Classe::Classe()
 Classe::~Classe()
 {
 #ifdef MAP
-    cout << "Appel au destructeur de <Classe>" << endl;
+    std::cout << "Appel au destructeur de <Classe>" << std::endl;
 #endif
 }
 
