@@ -127,7 +127,7 @@ colorscheme molokai
 "----------------------------------------------------------------------
 
 " Set font
-set guifont=Monospace\ 11 "Inconsolata\ 13
+set guifont=Inconsolata\ 10 "Monospace\ 10 "Inconsolata\ 13
 
 " Activate indenting
 filetype indent plugin on
