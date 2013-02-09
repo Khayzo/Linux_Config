@@ -175,14 +175,14 @@ set foldlevel=0
 " # Moves 
 "----------------------------------------------------------------------
 
-try
-    " Specify the behavior when switching between buffers
-    set switchbuf=useopen,usetab,newtab
+"try
+    "" Specify the behavior when switching between buffers
+    "set switchbuf=useopen,usetab,newtab
 
-    " Tab display
-    set stal=0
-catch
-endtry
+    "" Tab display
+    "set stal=0
+"catch
+"endtry
 
 " Switch tabs quickly
 nmap <C-S-tab> :tabprevious<cr>
@@ -432,7 +432,7 @@ filetype plugin on
 set tags+=~/.vim/tags/stl      
 set tags+=~/.vim/tags/gl      
 set tags+=~/.vim/tags/sdl      
-set tags+=~/.vim/tags/qt4 
+"set tags+=~/.vim/tags/qt4 
 set tags+=~/.vim/tags/sfml
 	
 "Build tags of your own project with CTRL+F12      

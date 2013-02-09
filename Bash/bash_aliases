@@ -34,8 +34,8 @@ alias build='./configure && make && sudo make install'
 
 alias path='echo $PATH | tr ":" "\n"'
 
-alias pp='cd ~/Programmation/PERSO/'
-alias pi='cd ~/Programmation/IF/'
+alias pp='cd /home/khayzo/Documents/Programming/'
+alias pi='cd /home/khayzo/Documents/INSA/3IF/Cours/'
 
 alias g='gvim'
 alias sg='sudo gvim'
@@ -46,6 +46,24 @@ alias d='dvtm -m ^w'
 alias clip='xclip -sel clip <'
 
 alias od='launch nautilus `pwd`'
+
+alias rm='trash-put'
+alias empty='trash-empty'
+alias srm='rm'
+
+
+alias gst='git status'
+alias ga='git add'
+alias gaa='git add .'
+alias gc='git commit'
+alias gl='git log'
+alias gpull='git pull'
+alias gpush='git push'
+alias gu="git status | grep modified | awk '{ print $3 }' | xargs git add"
+alias gr='git rm'
+alias gmt='git mergetool'
+
+alias kiwix='nohup /home/khayzo/Logiciels/kiwix/kiwix > /dev/null 2>&1 &'
 
 #---------------------------------------------------------------------------------
 #My functions
